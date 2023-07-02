@@ -12,13 +12,15 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const pages = ['Campaignes', 'Create Campaignes', 'Donations'];
 const settings = ['Profile', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -28,6 +30,7 @@ function ResponsiveAppBar() {
   };
 
   const handleCloseNavMenu = () => {
+    navigate('/campaign'); // Navigate to '/other-route'
     setAnchorElNav(null);
   };
 
